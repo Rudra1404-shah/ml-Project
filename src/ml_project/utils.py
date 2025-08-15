@@ -13,7 +13,7 @@ DB = os.getenv('DB')
 COLLECTION = os.getenv('COLLECTION')
 
 
-def read_all_from_mongo(collection):
+def read_all_from_mongo():
     """
     Reads all documents from the MongoDB collection.
     Returns a Pandas DataFrame.
@@ -32,6 +32,7 @@ def read_all_from_mongo(collection):
             return pd.DataFrame()
 
         df = pd.DataFrame(data)
+    
 
         # Drop the MongoDB '_id' column if present
         if '_id' in df.columns:
